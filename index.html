@@ -134,6 +134,63 @@
       border-color: var(--red);
     }
 
+    .official-site-cta {
+      width: 100%;
+      max-width: 320px;
+      margin-top: 18px;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--red);
+      border: 1px solid var(--red);
+      border-radius: 14px;
+      color: var(--white);
+      text-align: left;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .official-site-cta:hover {
+      background: #ef2929;
+      border-color: #ef2929;
+    }
+
+    .official-site-cta:active {
+      transform: scale(0.97);
+    }
+
+    .official-site-cta:focus-visible {
+      outline: 3px solid var(--white);
+      outline-offset: 3px;
+    }
+
+    .official-site-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .official-site-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .official-site-url {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .official-site-arrow {
+      margin-left: auto;
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
     .lang-flag {
       font-size: 28px;
       line-height: 1;
@@ -543,6 +600,20 @@
           <span class="lang-arrow">›</span>
         </button>
       </div>
+
+      <a
+        class="official-site-cta"
+        href="https://www.dozeburger.com/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Visitar la web oficial de DOZE en dozeburger.com (se abre en una pestaña nueva)"
+      >
+        <span class="official-site-copy">
+          <span class="official-site-title">Visita la web oficial de DOZE</span>
+          <span class="official-site-url">dozeburger.com</span>
+        </span>
+        <span class="official-site-arrow" aria-hidden="true">↗</span>
+      </a>
 
       <div class="scroll-hint">
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
