@@ -1,9 +1,11 @@
-# QR de DOZE, carta anterior vigente
+# QR de DOZE, diseño nuevo y carta anterior vigente
 
-Restaurado el proyecto de `96d489e`: diseño original, fotografías, enlace a la web oficial, copias locales sin modificar de las cartas de comida anteriores de Drive y las dos páginas anteriores de bebidas/postres.
+Se conserva el diseño nuevo aprobado, con enlace a la web oficial. El contenido sigue siendo el anterior: cartas de comida en español, inglés y alemán, y las dos páginas de bebidas/postres. No se modifican sus precios ni productos.
 
-Se añade una aclaración de alérgenos sobre la carta de comida en español, inglés y alemán: La Fuerte contiene cacahuetes en lugar de moluscos; El Verde contiene huevo. No se modifican los precios ni los productos de los documentos anteriores.
+La aclaración de alérgenos aparece sobre la carta de comida en los tres idiomas: La Fuerte contiene cacahuetes en lugar de moluscos; El Verde contiene huevo.
 
-La versión nueva está guardada en GitHub en `codex/cartas-2026-pendientes-impresion`, commit `a9780d3`. Esperar a que Luis confirme la impresión. Para reactivarla, revertir el commit de restauración de main o restaurar las rutas desde la rama guardada con revisión; no basta con fusionar un antecesor.
+La versión con las cartas nuevas está guardada en GitHub en `codex/cartas-2026-pendientes-impresion`, commit `a9780d3`. Esperar a que Luis confirme la impresión. Para activarla, restaurar las rutas desde la rama guardada revisando los cambios posteriores. Una simple fusión no recupera el contenido de un antecesor.
 
-Las tres imágenes originales de Drive se verificaron y copiaron a cartas-anteriores/ porque la carga directa fallaba en el navegador. Conservan precios y productos anteriores (incluido Del Mar). IDs de origen: ES 1dFGDCWwTaOhsR2RShnTy2_XQVABKAONe; EN 19yoKQv78FAdZedf7XSUggb3YK4jScRF-; DE 1SIFDHtRoiV7Ciq8czQvyjGH1_qv489bA. El Drive de la carta exterior se gestiona por separado.
+Las imágenes de cartas-anteriores/ son copias sin modificar de Drive. IDs de origen: ES 1dFGDCWwTaOhsR2RShnTy2_XQVABKAONe; EN 19yoKQv78FAdZedf7XSUggb3YK4jScRF-; DE 1SIFDHtRoiV7Ciq8czQvyjGH1_qv489bA.
+
+Luis confirma que todavía no ha subido las cartas nuevas a Drive. La carta exterior sigue con su contenido anterior.
