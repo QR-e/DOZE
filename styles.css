@@ -230,3 +230,6 @@
                                                                                                                         scroll-behavior:auto!important;
                                                                                                                         transition:none!important}
                                                                                                                       }
+
+.website-link { display: inline-block; margin-top: 16px; padding: 12px 0; font-size: 14px; text-underline-offset: 4px; }
+.website-link:hover { color: var(--primary); }

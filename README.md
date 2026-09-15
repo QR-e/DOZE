@@ -33,8 +33,8 @@ Abrir `http://127.0.0.1:8765/DOZE/` para verificar también la subruta de Pages.
 ## Identidad visual
 
 Fondo #0d0d0d, rojo hsl(350 75% 52%), Bebas Neue, DM Sans y botones derivados
-del hero de BurgerDoze. Solo selección y lectura de documentos, sin promoción,
-redes ni enlaces a la web principal añadidos a la interfaz.
+del hero de BurgerDoze. Solo selección y lectura de documentos, con acceso a la web oficial, sin promoción,
+ni redes sociales añadidas a la interfaz.
 
 ## Criterio de alérgenos aprobado
 
