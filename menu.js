@@ -1,10 +1,10 @@
-/* Diseño nuevo con las cartas anteriores vigentes hasta su impresión. */
-const base = "";
+/* Solo documentos locales y versionados. No cargar cartas antiguas de Drive. */
+const base = "cartas/2026-09-15/";
 const documents = {
-  es: { hash: "#carta-es", title: "Carta · Español", file: "cartas-anteriores/carta-es.jpg", pages: ["cartas-anteriores/carta-es.jpg"], lang: "es", hint: "Amplía con dos dedos para leer la carta.", open: "Abrir imagen ↗", back: "Volver" },
-  en: { hash: "#carta-en", title: "Menu · English", file: "cartas-anteriores/carta-en.jpg", pages: ["cartas-anteriores/carta-en.jpg"], lang: "en", hint: "Pinch to zoom and read the menu.", open: "Open image ↗", back: "Back" },
-  de: { hash: "#carta-de", title: "Speisekarte · Deutsch", file: "cartas-anteriores/carta-de.jpg", pages: ["cartas-anteriores/carta-de.jpg"], lang: "de", hint: "Zum Lesen mit zwei Fingern vergrößern.", open: "Bild öffnen ↗", back: "Zurück" },
-  bebidas: { hash: "#bebidas", title: "Bebidas y postres", file: "CARTA_BEBIDASPOSTRES.jpeg", pages: ["CARTA_BEBIDASPOSTRES.jpeg", "CARTA_BEBIDASPOSTRES2.jpeg"], lang: "es", hint: "Amplía con dos dedos para leer la carta.", open: "Abrir imagen ↗", back: "Volver" },
+  es: { hash: "#carta-es", title: "Carta · Español", file: "carta-es.pdf", pages: ["carta-es-1.webp", "carta-es-2.webp"], lang: "es", hint: "Amplía con dos dedos para leer la carta.", open: "Abrir PDF ↗", back: "Volver" },
+  en: { hash: "#carta-en", title: "Menu · English", file: "carta-en.pdf", pages: ["carta-en-1.webp", "carta-en-2.webp"], lang: "en", hint: "Pinch to zoom and read the menu.", open: "Open PDF ↗", back: "Back" },
+  de: { hash: "#carta-de", title: "Speisekarte · Deutsch", file: "carta-de.pdf", pages: ["carta-de-1.webp", "carta-de-2.webp"], lang: "de", hint: "Zum Lesen mit zwei Fingern vergrößern.", open: "PDF öffnen ↗", back: "Zurück" },
+  bebidas: { hash: "#bebidas", title: "Bebidas y postres", file: "bebidas-postres.jpg", pages: ["bebidas-postres.jpg"], lang: "es", hint: "Amplía con dos dedos para leer la carta.", open: "Abrir imagen ↗", back: "Volver" },
 };
 const selector = document.getElementById("selector");
 const viewer = document.getElementById("viewer");
@@ -22,15 +22,8 @@ function renderDocument() {
   if (doc) {
     document.getElementById("document-title").textContent = doc.title;
     document.getElementById("zoom-hint").textContent = doc.hint;
-    const correction = document.getElementById("allergen-corrections");
-    correction.hidden = key === "bebidas";
-    correction.textContent = ({
-      es: "Corrección a los símbolos de esta carta: La Fuerte contiene cacahuetes (en lugar de moluscos). El Verde contiene huevo.",
-      en: "Correction to this menu’s symbols: La Fuerte contains peanuts (instead of molluscs). El Verde contains egg.",
-      de: "Korrektur der Symbole dieser Speisekarte: La Fuerte enthält Erdnüsse (statt Weichtieren). El Verde enthält Ei."
-    })[doc.lang];
     const original = document.getElementById("original");
-    original.href = base + doc.file + "?v=carta-anterior-1";
+    original.href = base + doc.file + "?v=carta-aprobada-3";
     original.textContent = doc.open;
     const back = document.querySelector(".back");
     back.querySelector("span").textContent = doc.back;
@@ -43,8 +36,8 @@ function renderDocument() {
       const figure = document.createElement("figure");
       const img = document.createElement("img");
       img.alt = `${doc.title} (${index + 1}/${doc.pages.length})`;
-      img.width = key === "bebidas" ? 1600 : 1002;
-      img.height = key === "bebidas" ? 1131 : 1600;
+      img.width = key === "bebidas" ? 1600 : 1378;
+      img.height = key === "bebidas" ? 1131 : 2200;
       img.decoding = "async";
       img.loading = index === 0 ? "eager" : "lazy";
       img.addEventListener("error", () => {
@@ -52,24 +45,15 @@ function renderDocument() {
         error.className = "page-error";
         error.textContent = ({es:"No se ha podido cargar esta página.", en:"This page could not be loaded.", de:"Diese Seite konnte nicht geladen werden."})[doc.lang];
         const fallback = document.createElement("a");
-        fallback.href = base + file + "?v=carta-anterior-1";
+        fallback.href = base + doc.file + "?v=carta-aprobada-3";
         fallback.textContent = doc.open;
         fallback.target = "_blank";
         fallback.rel = "noopener";
         error.append(fallback);
         img.replaceWith(error);
       }, { once: true });
-      img.src = base + file + "?v=carta-anterior-1";
-      if (doc.pages.length > 1) {
-        const caption = document.createElement("figcaption");
-        const link = document.createElement("a");
-        link.href = base + file + "?v=carta-anterior-1";
-        link.target = "_blank";
-        link.rel = "noopener";
-        link.textContent = `${doc.open} (${index + 1}/${doc.pages.length})`;
-        caption.append(link);
-        figure.append(img, caption);
-      } else figure.append(img);
+      img.src = base + file + "?v=carta-aprobada-3";
+      figure.append(img);
       pages.append(figure);
     });
     document.getElementById("document-title").focus({ preventScroll: true });
@@ -81,4 +65,3 @@ function renderDocument() {
 }
 window.addEventListener("hashchange", renderDocument);
 renderDocument();
-
