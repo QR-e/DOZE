@@ -17,6 +17,48 @@
   intro.before(introMarker);
   let documentOpen = false;
   let timer;
+  const translations = {
+    es: {
+      locale: "es-ES",
+      edition: "Especial Halloween",
+      dates: "30 y 31 de octubre · 1 de noviembre",
+      teaser: "Ternera ahumada, brioche negro y salsa Hechizo by Doze.",
+      locations: "Llucmajor y Campos",
+      label: "La Belladona, especial Halloween",
+      photo: "La Belladona, la especial de Halloween con pan negro y jeringa de salsa roja.",
+    },
+    en: {
+      locale: "en-GB",
+      edition: "Halloween Special",
+      dates: "30 & 31 October · 1 November",
+      teaser: "Smoked beef, black brioche and Hechizo sauce by Doze.",
+      locations: "Llucmajor and Campos",
+      label: "La Belladona, Halloween special",
+      photo: "La Belladona, the Halloween special with a black bun and a syringe of red sauce.",
+    },
+    de: {
+      locale: "de-DE",
+      edition: "Halloween-Special",
+      dates: "30. und 31. Oktober · 1. November",
+      teaser: "Geräuchertes Rindfleisch, schwarzes Brioche-Brötchen und Hechizo-Sauce by Doze.",
+      locations: "Llucmajor und Campos",
+      label: "La Belladona, Halloween-Special",
+      photo: "La Belladona, das Halloween-Special mit schwarzem Brötchen und einer Spritze mit roter Sauce.",
+    },
+  };
+
+  function setLanguage(language) {
+    const lang = Object.hasOwn(translations, language) ? language : "es";
+    const copy = translations[lang];
+    feature.lang = lang;
+    feature.setAttribute("aria-label", copy.label);
+    feature.querySelector("img").alt = copy.photo;
+    feature.querySelector(".belladona-menu__edition").textContent = copy.edition;
+    feature.querySelector(".belladona-menu__dates").textContent = copy.dates;
+    feature.querySelector(".belladona-menu__teaser").textContent = copy.teaser;
+    feature.querySelector(".belladona-menu__locations").textContent = copy.locations;
+    feature.querySelector(".belladona-price").textContent = new Intl.NumberFormat(copy.locale, { style: "currency", currency: "EUR" }).format(12.9);
+  }
 
   function refresh() {
     clearTimeout(timer);
@@ -31,7 +73,7 @@
     if (next) timer = setTimeout(refresh, Math.min(next - now, 2_147_483_647));
   }
 
-  window.dozeHalloween = { render(open) { documentOpen = open; refresh(); } };
+  window.dozeHalloween = { render(open, lang = "es") { documentOpen = open; setLanguage(lang); refresh(); } };
   window.addEventListener("focus", refresh);
   document.addEventListener("visibilitychange", refresh);
   refresh();

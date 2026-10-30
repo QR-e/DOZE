@@ -16,7 +16,7 @@ function renderDocument() {
   const doc = entry?.[1];
   selector.hidden = Boolean(doc);
   viewer.hidden = !doc;
-  window.dozeHalloween?.render(Boolean(doc));
+  window.dozeHalloween?.render(Boolean(doc), doc?.lang);
   document.documentElement.lang = doc?.lang || "es";
   document.title = doc ? `${doc.title} | DOZE Burger & Drink` : "La carta | DOZE Burger & Drink";
   pages.replaceChildren();
