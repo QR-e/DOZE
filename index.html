@@ -10,61 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261030-belladona-v2">
-  <link rel="stylesheet" href="halloween-campaign.css?v=20261030-belladona-b-gold">
-  <script src="halloween.js?v=20261030-belladona-i18n" defer></script>
-  <script src="menu.js?v=20261030-belladona-i18n" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260915-web">
+  <script src="menu.js?v=20261002-carta-activa" defer></script>
 </head>
 <body>
   <main>
-    <template id="halloween-hero-template">
-      <section class="belladona-hero" hidden lang="es" aria-label="La Belladona, especial Halloween">
-        <p class="belladona-hero__brand" aria-label="DOZE">DO<span>Z</span>E</p>
-        <h2 class="belladona-hero__accessible-title">La Belladona, especial Halloween de Doze</h2>
-        <div class="belladona-hero__stage">
-          <div class="belladona-hero__copy">
-            <div class="belladona-hero__wordmark" aria-hidden="true"><svg class="belladona-wordmark" viewBox="90 55 850 245">
-            <defs>
-              <mask id="belladona-mask-hero" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1536"><rect width="1024" height="1536" fill="white"/><rect x="430" y="275" width="164" height="1261" fill="black"/></mask>
-              <filter id="belladona-gold-hero" x="0" y="0" width="1024" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.04 0 0 0 0 0 .96 0 0 0 0 0 .8 0 0 0 6 0 0 -.65"/></filter>
-            </defs>
-            <image href="cartas/2026-10-30-halloween/la-belladona.webp" width="1024" height="1536" filter="url(#belladona-gold-hero)" mask="url(#belladona-mask-hero)"/>
-          </svg></div>
-            <p class="belladona-hero__eyebrow">Especial Halloween</p>
-            <div class="belladona-hero__details">
-              <p class="belladona-price">12,90 <span>€</span></p>
-              <p class="belladona-dates">30 y 31 de octubre · 1 de noviembre</p>
-              <p class="belladona-locations">Llucmajor y Campos</p>
-            </div>
-            <p class="belladona-hero__teaser">Ternera ahumada, brioche negro y salsa Hechizo by Doze.</p>
-            <div class="belladona-hero__actions"><a class="belladona-button" href="#carta-es">Ver carta</a></div>
-          </div>
-          <div class="belladona-hero__visual"><img class="belladona-hero__scene" src="cartas/2026-10-30-halloween/la-belladona-cutout.webp" alt="La Belladona: pan negro, queso fundido y salsa roja con una jeringa de salsa." width="1254" height="1254" fetchpriority="high"></div>
-        </div>
-      </section>
-    </template>
-    <template id="halloween-template">
-      <section class="halloween-special belladona-menu" hidden lang="es" aria-label="La Belladona, especial Halloween">
-        <div class="belladona-menu__photo"><img src="cartas/2026-10-30-halloween/la-belladona-cutout.webp" alt="La Belladona, la especial de Halloween con pan negro y jeringa de salsa roja." width="1254" height="1254"></div>
-        <div class="belladona-menu__copy">
-          <h2 class="belladona-hero__accessible-title">La Belladona</h2>
-          <div class="belladona-menu__wordmark" aria-hidden="true"><svg class="belladona-wordmark" viewBox="90 55 850 245">
-            <defs>
-              <mask id="belladona-mask-menu" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1536"><rect width="1024" height="1536" fill="white"/><rect x="430" y="275" width="164" height="1261" fill="black"/></mask>
-              <filter id="belladona-gold-menu" x="0" y="0" width="1024" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.04 0 0 0 0 0 .96 0 0 0 0 0 .8 0 0 0 6 0 0 -.65"/></filter>
-            </defs>
-            <image href="cartas/2026-10-30-halloween/la-belladona.webp" width="1024" height="1536" filter="url(#belladona-gold-menu)" mask="url(#belladona-mask-menu)"/>
-          </svg></div>
-          <p class="belladona-menu__edition">Especial Halloween</p>
-          <div class="belladona-menu__facts">
-            <p class="belladona-price">12,90 <span>€</span></p>
-            <p class="belladona-menu__dates">30 y 31 de octubre · 1 de noviembre</p>
-            <p class="belladona-menu__teaser">Ternera ahumada, brioche negro y salsa Hechizo by Doze.</p>
-            <p class="belladona-menu__locations">Llucmajor y Campos</p>
-          </div>
-        </div>
-      </section>
-    </template>
     <section id="selector" class="selector" aria-labelledby="selector-title">
       <header class="brand">
         <p class="wordmark" aria-label="DOZE">DO<span>Z</span>E</p>
